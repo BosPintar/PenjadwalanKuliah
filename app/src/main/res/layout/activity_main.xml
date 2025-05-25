@@ -1,35 +1,38 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?> <!-- Deklarasi XML -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFF"
-    android:orientation="vertical"
-    tools:context=".MainActivity">
+    android:orientation="vertical">
 
+    <!-- SwipeRefreshLayout untuk pull-to-refresh -->
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
         android:id="@+id/sw"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1">
 
+        <!-- Kontainer utama dengan background gradasi -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@drawable/gradient_menu_utama"
             android:orientation="vertical">
 
+            <!-- Bagian atas layout (profil, notifikasi, ucapan) -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1.9"
                 android:orientation="vertical">
 
+                <!-- Layout relatif agar bisa menumpuk elemen -->
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
+                    <!-- Layout untuk konten atas -->
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
@@ -37,25 +40,26 @@
                         android:orientation="vertical"
                         android:padding="12dp">
 
+                        <!-- Header: foto profil, nama, notifikasi, setting -->
                         <LinearLayout
-
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:gravity="center_vertical"
                             android:orientation="horizontal">
 
+                            <!-- Foto profil -->
                             <ImageView
                                 android:id="@+id/imgProfil"
                                 android:layout_width="50dp"
                                 android:layout_height="50dp"
                                 android:src="@drawable/ic_user" />
 
+                            <!-- Informasi nama dan jurusan -->
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="10dp"
                                 android:layout_weight="1"
-
                                 android:orientation="vertical">
 
                                 <TextView
@@ -76,6 +80,7 @@
                                     android:textSize="12dp" />
                             </LinearLayout>
 
+                            <!-- Notifikasi -->
                             <LinearLayout
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -101,6 +106,7 @@
                                     android:textStyle="bold" />
                             </LinearLayout>
 
+                            <!-- Tombol setting -->
                             <ImageView
                                 android:id="@+id/btSetting"
                                 android:layout_width="wrap_content"
@@ -108,6 +114,7 @@
                                 android:src="@drawable/ic_baseline_settings_24" />
                         </LinearLayout>
 
+                        <!-- Salam dan motivasi -->
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
@@ -155,6 +162,7 @@
                         </LinearLayout>
                     </LinearLayout>
 
+                    <!-- Gelombang dekoratif -->
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
@@ -162,7 +170,7 @@
                 </RelativeLayout>
             </LinearLayout>
 
-
+            <!-- Bagian bawah layout -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -171,6 +179,7 @@
                 android:background="@drawable/radius_bulan"
                 android:orientation="vertical">
 
+                <!-- Menu ikon: izin, jadwal, histori -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -179,6 +188,7 @@
                     android:layout_marginRight="20dp"
                     android:orientation="horizontal">
 
+                    <!-- Tombol Izin -->
                     <LinearLayout
                         android:id="@+id/btIzin"
                         android:layout_width="match_parent"
@@ -190,7 +200,6 @@
                         <ImageView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-
                             android:src="@drawable/ic_izin_selector" />
 
                         <TextView
@@ -203,6 +212,7 @@
                             android:textSize="12dp" />
                     </LinearLayout>
 
+                    <!-- Tombol Jadwal -->
                     <LinearLayout
                         android:id="@+id/btJadwal"
                         android:layout_width="match_parent"
@@ -226,6 +236,7 @@
                             android:textSize="12dp" />
                     </LinearLayout>
 
+                    <!-- Tombol Histori -->
                     <LinearLayout
                         android:id="@+id/btHistori"
                         android:layout_width="match_parent"
@@ -251,14 +262,16 @@
 
                 </LinearLayout>
 
+                <!-- Kartu Jadwal -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="20dp"
-                    android:background="@drawable/radius_absen"
+                    android:background="@drawable/radius_jadwal"
                     android:orientation="vertical"
                     android:padding="10dp">
 
+                    <!-- Jam digital -->
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -282,18 +295,9 @@
                             android:textColor="@color/black"
                             android:textSize="14dp"
                             android:textStyle="bold" />
-
-                        <TextView
-                            android:id="@+id/txtNamaShift"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:padding="4dp"
-                            android:text=""
-                            android:textColor="#FF5722"
-                            android:textSize="8dp" />
                     </LinearLayout>
 
-
+                    <!-- Label jadwal hari ini -->
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -310,7 +314,6 @@
                             android:textStyle="bold" />
 
                     </LinearLayout>
-
 
                 </LinearLayout>
 
